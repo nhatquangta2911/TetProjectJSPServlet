@@ -26,11 +26,11 @@
         </div><br>
         <div class="w-50">
             Password:<br>
-            <input type="password" name="password" class="form-control">
+            <input type="password" name="password-1" class="form-control">
         </div><br>
         <div class="w-50">
             Retype Password:<br>
-            <input type="password" name="retype-password" class="form-control">
+            <input type="password" name="password-2" class="form-control">
         </div><br>
         <div class="w-50">
             Full Name:<br>
@@ -54,7 +54,7 @@
             </div>
         </div><br>
         <div>
-            <input type="submit" value="Sign Up" class="btn w-50 btn-outline-primary">
+            <input type="submit" value="Sign Up" class="btn w-50 btn-outline-success">
         </div>
     </form>
 </div>

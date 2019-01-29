@@ -14,7 +14,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
-<body class="container">
-    <h1 class="text-primary">My Profile</h1>
+<body>
+<div class="container w-100">
+    <br><br><h1 class="text-secondary">My Profile</h1>
+    <hr><br>
+
+    <p>Email: </p>
+    <p>Full Name: </p>
+    <p>Date Of Birth: </p>
+    <p>Gender: </p>
+
+    <br>
+    <form method="get" action="/home">
+        <input type="submit" value="Back" class="btn w-50 btn-outline-success">
+    </form>
+</div>
 </body>
 </html>

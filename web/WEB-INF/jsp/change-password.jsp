@@ -14,7 +14,32 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
-<body class="container">
-    <h1 class="text-danger" >Change Password</h1>
+<body>
+<div class="container w-100">
+    <br><br><h1 class="text-secondary">Change password</h1>
+    <hr><br>
+    <form method="post" action="/change-password">
+        <div class="w-50">
+            Current Password:<br>
+            <input type="password" name="current-password" class="form-control">
+        </div><br>
+        <div class="w-50">
+            New Password:<br>
+            <input type="password" name="new-password-1" class="form-control">
+        </div>
+        <br>
+        <div class="w-50">
+            Retype Password:<br>
+            <input type="password" name="new-password-2" class="form-control">
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="Change Password" class="btn w-50 btn-outline-danger ">
+        </div>
+    </form>
+    <form method="get" action="/home">
+        <input type="submit" value="Back" class="btn w-50 btn-outline-success">
+    </form>
+</div>
 </body>
 </html>
