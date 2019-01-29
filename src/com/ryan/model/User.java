@@ -1,6 +1,8 @@
 package com.ryan.model;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
 
     private String emailAddress;
     private String password;
