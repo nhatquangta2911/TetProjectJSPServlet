@@ -15,7 +15,48 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
-<body class="container">
-    <h1 class="text-success">Register Page</h1>
+<body>
+<div class="container w-100">
+    <br><br><h1 class="text-secondary">Create an account</h1>
+    <hr><br>
+    <form method="post" action="/register">
+        <div class="w-50">
+            Email:<br>
+            <input type="email" name="email" class="form-control">
+        </div><br>
+        <div class="w-50">
+            Password:<br>
+            <input type="password" name="password" class="form-control">
+        </div><br>
+        <div class="w-50">
+            Retype Password:<br>
+            <input type="password" name="retype-password" class="form-control">
+        </div><br>
+        <div class="w-50">
+            Full Name:<br>
+            <input type="text" name="full-name" class="form-control">
+        </div><br>
+        <div class="w-50">
+            Date Of Birth:<br>
+            <input type="date" name="date-of-birth" class="form-control">
+        </div><br>
+        <div class="row">
+            <div class="col-sm-2">Gender: </div>
+            <div class="col-sm-2 form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="gender">Male
+                </label>
+            </div>
+            <div class="col-sm-4 form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="gender">Female
+                </label>
+            </div>
+        </div><br>
+        <div>
+            <input type="submit" value="Sign Up" class="btn w-50 btn-outline-primary">
+        </div>
+    </form>
+</div>
 </body>
 </html>
