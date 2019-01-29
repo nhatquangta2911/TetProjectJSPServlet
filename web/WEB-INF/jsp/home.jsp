@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.ryan.model.User" %><%--
   Created by IntelliJ IDEA.
   User: ryan-ta
   Date: 1/27/19
@@ -27,7 +27,10 @@
         <div>
             <hr style="width: 100%; color: gray; height: 0.1px; background-color: gainsboro;" />
             <br>
-            <p>Hello <span class="text-primary ">${user}!</span><span> Welcome to my website!</span></p>
+            <%
+                User user = (User) session.getAttribute("user");
+            %>
+            <p>Hello <span class="text-primary "><%= user.getFullName()%></span> !<span> Welcome to my website!</span></p>
         </div><br><br>
         <div class="row">
             <form class="col-sm-4" method="get" action="/my-profile">

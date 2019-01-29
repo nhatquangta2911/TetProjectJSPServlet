@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.ryan.model.User" %><%--
   Created by IntelliJ IDEA.
   User: ryan-ta
   Date: 1/27/19
@@ -18,29 +18,32 @@
 <div class="container w-100">
     <br><br><h1 class="text-secondary">Edit Profile</h1>
     <hr><br>
+    <%
+        User user = (User) session.getAttribute("user");
+    %>
     <form method="post" action="/register">
         <div class="w-50">
             Email:<br>
-            <input type="email" name="email" class="form-control">
+            <input type="email" name="email" disabled value="<%= user.getEmailAddress()%>" class="form-control">
         </div><br>
         <div class="w-50">
             Full Name:<br>
-            <input type="text" name="full-name" class="form-control">
+            <input type="text" name="full-name" value="<%= user.getFullName()%>" class="form-control">
         </div><br>
         <div class="w-50">
             Date Of Birth:<br>
-            <input type="date" name="date-of-birth" class="form-control">
+            <input type="date" name="date-of-birth" value="<%= user.getDateOfBirth()%>" class="form-control">
         </div><br>
         <div class="row">
             <div class="col-sm-2">Gender: </div>
             <div class="col-sm-2 form-check-inline">
                 <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="gender">Male
+                    <input type="radio" class="form-check-input" <%= user.isFemale()?"":"checked"%> name="gender">Male
                 </label>
             </div>
             <div class="col-sm-4 form-check-inline">
                 <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="gender">Female
+                    <input type="radio" class="form-check-input" <%= user.isFemale()?"checked":""%> name="gender">Female
                 </label>
             </div>
         </div><br>
@@ -48,7 +51,7 @@
             <input type="submit" value="Edit Profile" class="btn w-50 btn-outline-info">
         </div>
     </form>
-    <form method="get" action="/home">
+    <form method="post" action="/home">
         <input type="submit" value="Back" class="w-50 btn btn-outline-success">
     </form>
 </div>

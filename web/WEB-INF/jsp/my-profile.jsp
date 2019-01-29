@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.ryan.model.User" %><%--
   Created by IntelliJ IDEA.
   User: ryan-ta
   Date: 1/27/19
@@ -18,11 +18,39 @@
 <div class="container w-100">
     <br><br><h1 class="text-secondary">My Profile</h1>
     <hr><br>
-
-    <p>Email: </p>
-    <p>Full Name: </p>
-    <p>Date Of Birth: </p>
-    <p>Gender: </p>
+    <%
+        User user = (User) session.getAttribute("user");
+    %>
+    <div class="row w-50">
+        <div class="col-sm-4">
+            Email:
+        </div>
+        <div class="col-sm-8">
+            <p class="text-info"><%= user.getEmailAddress()%></p>
+        </div>
+        <div class="col-sm-4">
+            Full Name:
+        </div>
+        <div class="col-sm-8">
+            <p class="text-info"><%= user.getFullName()%></p>
+        </div>
+        <div class="col-sm-4">
+            Date Of Birth:
+        </div>
+        <div class="col-sm-8">
+            <p class="text-info"><%= user.getDateOfBirth()%></p>
+        </div>
+        <div class="col-sm-4">
+            Gender:
+        </div>
+        <div class="col-sm-8">
+            <p class="text-info"><%= user.isFemale()?"Female":"Male"%></p>
+        </div>
+    </div>
+    <%--<p>Email: <span class="text-success"><%= user.getEmailAddress()%></span></p>--%>
+    <%--<p>Full Name: <span class="text-success"><%= user.getFullName()%></span></p>--%>
+    <%--<p>Date Of Birth: <span class="text-success"><%= user.getDateOfBirth()%></span></p>--%>
+    <%--<p>Gender: <span class="text-success"><%= user.isFemale()?"Female":"Male"%></span></p>--%>
 
     <br>
     <form method="get" action="/home">

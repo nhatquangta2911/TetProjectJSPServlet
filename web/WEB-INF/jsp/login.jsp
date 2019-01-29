@@ -19,6 +19,7 @@
     <div class="container w-100">
         <br><br><h1 class="text-secondary">LOGIN PAGE</h1>
         <hr><br>
+        <p class="text-danger">${userInfo}</p>
         <form method="post" action="/login">
             <div class="w-50">
                 Email:<br>

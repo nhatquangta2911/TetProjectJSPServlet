@@ -18,7 +18,9 @@
 <body>
 <div class="container w-100">
     <br><br><h1 class="text-secondary">Create an account</h1>
-    <hr><br>
+    <hr>
+    <p class="text-warning">${notification}</p>
+    <br>
     <form method="post" action="/register">
         <div class="w-50">
             Email:<br>
