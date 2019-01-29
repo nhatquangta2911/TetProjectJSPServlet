@@ -1,5 +1,7 @@
 package com.ryan.servlet;
 
+import com.ryan.model.User;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,5 +21,14 @@ public class EditProfileServlet extends HttpServlet {
         } else {
             resp.sendRedirect("/login");
         }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String editedEmailAddress = req.getParameter("email");
+        String editedFullName = req.getParameter("full-name");
+        String editedDateOfBirth = req.getParameter("date-of-birth");
+        String gender = req.getParameter("gender");
+        boolean isFemale = gender.equals("Female");
     }
 }

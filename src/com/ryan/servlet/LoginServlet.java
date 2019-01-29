@@ -21,13 +21,16 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        UserManager userManager = new UserManager();
+
         String emailAddress = req.getParameter("email");
         String password = req.getParameter("password");
 
-        if (emailAddress.equals("user01@gmail.com") && password.equals("123456")) {
-            CookieUtils.addCookie(resp, "emailAddress", emailAddress, 60*60);
+        if (userManager.getUser(emailAddress) != null && userManager.getUser(emailAddress).getPassword().equals(password)) {
+            CookieUtils.addCookie(resp, "emailAddress", emailAddress, 60 * 60);
+            HttpSession session = req.getSession();
+            session.setAttribute("user", userManager.getUser(emailAddress));
             resp.sendRedirect("/home");
-
         } else {
             String fail = "USERNAME OR PASSWORD MIGHT INCORRECT, PLEASE ENTER AGAIN!";
             req.setAttribute("fail", fail);

@@ -22,8 +22,6 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        UserManager userManager = new UserManager();
-
         String emailAddress = req.getParameter("email");
         String password = req.getParameter("password-2");
         String fullName = req.getParameter("full-name");
@@ -33,18 +31,21 @@ public class RegisterServlet extends HttpServlet {
             isFemale = true;
         }
 
+        UserManager userManager = new UserManager();
         User newUser = new User(emailAddress, password, fullName, dateOfBirth, isFemale);
-        if (userManager.addUser(newUser)) {
-            req.setAttribute("emailAddress", emailAddress);
-            req.setAttribute("password", password);
-            req.setAttribute("fullName", fullName);
-            req.setAttribute("dateOfBirth", dateOfBirth);
-            req.setAttribute("isFemale", isFemale);
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
-            requestDispatcher.forward(req, resp);
-        } else {
-            resp.sendRedirect("/login");
-        }
 
+        if (userManager.addUser(newUser)) {
+//            req.setAttribute("emailAddress", emailAddress);
+//            req.setAttribute("password", password);
+//            req.setAttribute("fullName", fullName);
+//            req.setAttribute("dateOfBirth", dateOfBirth);
+//            req.setAttribute("isFemale", isFemale);
+//            resp.sendRedirect("/login");
+            resp.sendRedirect("/login");
+        } else {
+            String notification = "THIS EMAIL IS ALREADY USED BY ANOTHER USER !";
+            req.setAttribute("notification", notification);
+            req.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(req, resp);
+        }
     }
 }
