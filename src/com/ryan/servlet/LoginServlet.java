@@ -25,12 +25,8 @@ public class LoginServlet extends HttpServlet {
         String password = req.getParameter("password");
 
         if (emailAddress.equals("user01@gmail.com") && password.equals("123456")) {
-            req.setAttribute("user", emailAddress);
+            CookieUtils.addCookie(resp, "emailAddress", emailAddress, 60*60);
             resp.sendRedirect("/home");
-            HttpSession session = req.getSession();
-            session.setAttribute("user", emailAddress);
-//            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
-//            requestDispatcher.forward(req, resp);
 
         } else {
             String fail = "USERNAME OR PASSWORD MIGHT INCORRECT, PLEASE ENTER AGAIN!";

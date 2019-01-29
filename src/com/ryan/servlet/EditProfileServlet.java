@@ -13,7 +13,11 @@ public class EditProfileServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/edit-profile.jsp");
-        requestDispatcher.forward(req, resp);
+
+        if (CookieUtils.getCookie(req, "emailAddress") != null) {
+            req.getRequestDispatcher("/WEB-INF/jsp/edit-profile.jsp").forward(req, resp);
+        } else {
+            resp.sendRedirect("/login");
+        }
     }
 }

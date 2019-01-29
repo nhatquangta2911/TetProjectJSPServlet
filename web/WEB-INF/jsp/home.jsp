@@ -20,7 +20,7 @@
         <br><br>
         <div class="row">
             <h1 class="col-sm-8 text-secondary">HOME PAGE</h1>
-            <form class="col-sm-4" method="post" action="/logout">
+            <form class="col-sm-4" method="get" action="/logout">
                 <input type="submit" value="Log Out" class="w-100 btn mt-1 btn-outline-warning">
             </form>
         </div>
