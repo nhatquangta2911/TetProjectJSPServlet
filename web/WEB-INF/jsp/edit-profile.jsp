@@ -21,7 +21,7 @@
     <%
         User user = (User) session.getAttribute("user");
     %>
-    <form method="post" action="/register">
+    <form method="post" action="/edit-my-profile">
         <div class="w-50">
             Email:<br>
             <input type="email" name="email" disabled value="<%= user.getEmailAddress()%>" class="form-control">
@@ -51,9 +51,14 @@
             <input type="submit" value="Edit Profile" class="btn w-50 btn-outline-info">
         </div>
     </form>
-    <form method="post" action="/home">
-        <input type="submit" value="Back" class="w-50 btn btn-outline-success">
-    </form>
+    <button onclick="redirect()" class="w-50 btn btn-outline-success">Back</button>
 </div>
+
+<script>
+    function redirect() {
+        window.location = "/home";
+    }
+</script>
+
 </body>
 </html>

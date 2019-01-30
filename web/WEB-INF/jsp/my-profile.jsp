@@ -53,9 +53,14 @@
     <%--<p>Gender: <span class="text-success"><%= user.isFemale()?"Female":"Male"%></span></p>--%>
 
     <br>
-    <form method="get" action="/home">
-        <input type="submit" value="Back" class="btn w-50 btn-outline-success">
-    </form>
+    <button onclick="redirect()" class="btn w-50 btn-outline-success">Back</button>
 </div>
+
+<script>
+    function redirect() {
+        window.location = "/home"
+    }
+</script>
+
 </body>
 </html>

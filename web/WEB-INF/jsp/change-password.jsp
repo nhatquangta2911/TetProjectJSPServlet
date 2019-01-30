@@ -37,9 +37,16 @@
             <input type="submit" value="Change Password" class="btn w-50 btn-outline-danger ">
         </div>
     </form>
-    <form method="get" action="/home">
-        <input type="submit" value="Back" class="btn w-50 btn-outline-success">
-    </form>
+    <div>
+        <button onclick="redirect()" class="btn w-50 btn-outline-success">Back</button>
+    </div>
 </div>
+
+    <script>
+        function redirect() {
+            window.location = "/home";
+        }
+    </script>
+
 </body>
 </html>
