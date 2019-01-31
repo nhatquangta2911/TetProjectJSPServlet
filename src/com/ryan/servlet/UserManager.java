@@ -57,10 +57,13 @@ public class UserManager {
         }
     }
 
-    void removeUser(String needToRemoveEmailAddress) {
-        if (isExist(getUser(needToRemoveEmailAddress))) {
+    boolean removeUser(String needToRemoveEmailAddress) {
+        if (!isExist(getUser(needToRemoveEmailAddress))) {
+            return false;
+        } else {
             users.remove(getUser(needToRemoveEmailAddress));
             fileManager.write(users);
+            return false;
         }
     }
 

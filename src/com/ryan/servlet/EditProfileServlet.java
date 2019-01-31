@@ -2,7 +2,6 @@ package com.ryan.servlet;
 
 import com.ryan.model.User;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,29 +29,19 @@ public class EditProfileServlet extends HttpServlet {
         HttpSession session = req.getSession();
         User user = (User) session.getAttribute("user");
 
-        String editedEmailAddress = req.getParameter("email");
         String editedFullName = req.getParameter("full-name");
         String editedDateOfBirth = req.getParameter("date-of-birth");
-        String gender = req.getParameter("gender");
-        boolean isFemale = gender.equals("Female");
+        String editedGender = req.getParameter("edited-gender");
+        boolean isFemale = editedGender.equals("Female");
+
+        user.setFullName(editedFullName);
+        user.setDateOfBirth(editedDateOfBirth);
+        user.setGender(isFemale);
 
         UserManager userManager = new UserManager();
-        User editedUser = new User(editedEmailAddress, user.getPassword(), editedFullName, editedDateOfBirth, isFemale);
-        editedUser.setFullName(editedFullName);
-        editedUser.setDateOfBirth(editedDateOfBirth);
-        editedUser.setGender(isFemale);
+        userManager.removeUser(user.getEmailAddress());
+        userManager.addUser(user);
 
-        if (user == editedUser) {
-            return;
-        } else {
-            userManager.removeUser(editedEmailAddress);
-            if (userManager.addUser(editedUser)) {
-                resp.sendRedirect("/my-profile.jsp");
-            } else {
-                String fail = "Fail";
-                req.setAttribute("fail", fail);
-                req.getRequestDispatcher("/WEB-INF/jsp/edit-profile.jsp");
-            }
-        }
+        resp.sendRedirect("/my-profile");
     }
 }
