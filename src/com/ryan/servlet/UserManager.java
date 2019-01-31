@@ -57,6 +57,13 @@ public class UserManager {
         }
     }
 
+    void removeUser(String needToRemoveEmailAddress) {
+        if (isExist(getUser(needToRemoveEmailAddress))) {
+            users.remove(getUser(needToRemoveEmailAddress));
+            fileManager.write(users);
+        }
+    }
+
     public boolean changePassword(String needToChangePasswordEmailAddress, String newPassword) {
         if (!isExist(getUser(needToChangePasswordEmailAddress))) {
             return false;

@@ -18,6 +18,7 @@
 <div class="container w-100">
     <br><br><h1 class="text-secondary">Edit Profile</h1>
     <hr><br>
+    <p class="text-warning">${fail}</p>
     <%
         User user = (User) session.getAttribute("user");
     %>
