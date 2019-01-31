@@ -39,12 +39,12 @@
             <div class="col-sm-2">Gender: </div>
             <div class="col-sm-2 form-check-inline">
                 <label class="form-check-label">
-                    <input type="radio" class="form-check-input" <%= user.isFemale()?"":"checked"%> name="edited-gender">Male
+                    <input type="radio" value="male" class="form-check-input" <%= user.isFemale()?"":"checked"%> name="edited-gender">Male
                 </label>
             </div>
             <div class="col-sm-4 form-check-inline">
                 <label class="form-check-label">
-                    <input type="radio" class="form-check-input" <%= user.isFemale()?"checked":""%> name="edited-gender">Female
+                    <input type="radio" value="female" class="form-check-input" <%= user.isFemale()?"checked":""%> name="edited-gender">Female
                 </label>
             </div>
         </div><br>

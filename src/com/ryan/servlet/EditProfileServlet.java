@@ -32,7 +32,7 @@ public class EditProfileServlet extends HttpServlet {
         String editedFullName = req.getParameter("full-name");
         String editedDateOfBirth = req.getParameter("date-of-birth");
         String editedGender = req.getParameter("edited-gender");
-        boolean isFemale = editedGender.equals("Female");
+        boolean isFemale = editedGender.equals("female");
 
         user.setFullName(editedFullName);
         user.setDateOfBirth(editedDateOfBirth);
