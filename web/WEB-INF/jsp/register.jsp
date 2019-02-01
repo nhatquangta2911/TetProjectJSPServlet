@@ -21,18 +21,18 @@
     <hr>
     <p class="text-warning">${notification}</p>
     <br>
-    <form method="post" action="/register">
+    <form method="post" action="/register" name="registerForm">
         <div class="w-50">
             Email:<br>
             <input type="email" name="email" class="form-control">
         </div><br>
         <div class="w-50">
             Password:<br>
-            <input type="password" name="password-1" class="form-control">
+            <input type="password" name="password1" class="form-control">
         </div><br>
         <div class="w-50">
             Retype Password:<br>
-            <input type="password" name="password-2" class="form-control">
+            <input type="password" name="password2" class="form-control">
         </div><br>
         <div class="w-50">
             Full Name:<br>
@@ -56,9 +56,19 @@
             </div>
         </div><br>
         <div>
-            <input type="submit" value="Sign Up" class="btn w-50 btn-outline-success">
+            <input type="submit" onclick="matchPassword()" value="Sign Up" class="btn w-50 btn-outline-success">
         </div>
     </form>
 </div>
+
+<script>
+    function matchPassword() {
+        var firstPassword = document.registerForm.password1.value;
+        var secondPassword = document.registerForm.password2.value;
+        if (firstPassword !== secondPassword) {
+            alert('Password must be the same!');
+        }
+    }
+</script>
 </body>
 </html>
