@@ -12,8 +12,6 @@ public class UserManager {
     public UserManager() {
         fileManager = new FileManager();
         users = fileManager.read();
-        // Add file handling code here
-        // ...
     }
 
     public User getUser(String needToGetEmailAddress) {

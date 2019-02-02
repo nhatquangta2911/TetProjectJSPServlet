@@ -10,14 +10,14 @@ public class CookieUtils {
         // private for not creating an instance
     }
 
-    public static void addCookie(HttpServletResponse response, String name, String value, int age) {
+    static void addCookie(HttpServletResponse response, String name, String value, int age) {
         Cookie cookie = new Cookie(name, value);
         cookie.setMaxAge(age);
         cookie.setPath("/");
         response.addCookie(cookie);
     }
 
-    public static Cookie getCookie(HttpServletRequest request, String name) {
+    static Cookie getCookie(HttpServletRequest request, String name) {
         Cookie[] cookies = request.getCookies();
         for (Cookie cookie : cookies) {
             if (cookie.getName().equals(name)) {
@@ -27,7 +27,7 @@ public class CookieUtils {
         return null;
     }
 
-    public static void removeCookie(HttpServletRequest request, HttpServletResponse response, String name) {
+    static void removeCookie(HttpServletRequest request, HttpServletResponse response, String name) {
         Cookie cookie = getCookie(request, name);
         if (cookie == null) {
             return;

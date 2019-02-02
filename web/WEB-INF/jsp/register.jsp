@@ -65,7 +65,6 @@
     function matchPassword() {
         var firstPassword = document.registerForm.password1.value;
         var secondPassword = document.registerForm.password2.value;
-        // var requiredRadioButton = document.registerForm.gender.required;
         if (firstPassword !== secondPassword) {
             alert('Password must be the same!');
             return false;

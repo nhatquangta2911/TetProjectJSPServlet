@@ -24,6 +24,5 @@ public class MyProfileServlet extends HttpServlet {
         } else {
             resp.sendRedirect("/login");
         }
-
     }
 }

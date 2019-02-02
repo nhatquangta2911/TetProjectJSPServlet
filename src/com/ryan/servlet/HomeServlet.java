@@ -15,9 +15,6 @@ public class HomeServlet extends HttpServlet {
 
         Cookie cookie = CookieUtils.getCookie(req, "emailAddress");
         if (cookie != null) {
-//            String emailAddress = cookie.getValue();
-//            UserManager userManager = new UserManager();
-//            req.setAttribute("user", userManager.getUser(emailAddress));
             HttpSession session = req.getSession();
             User user = (User) session.getAttribute("user");
             req.setAttribute("user", user);
@@ -25,6 +22,5 @@ public class HomeServlet extends HttpServlet {
         } else {
             resp.sendRedirect("/login");
         }
-
     }
 }

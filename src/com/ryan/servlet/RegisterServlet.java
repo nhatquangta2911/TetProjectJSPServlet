@@ -35,12 +35,6 @@ public class RegisterServlet extends HttpServlet {
         User newUser = new User(emailAddress, password, fullName, dateOfBirth, isFemale);
 
         if (userManager.addUser(newUser)) {
-//            req.setAttribute("emailAddress", emailAddress);
-//            req.setAttribute("password", password);
-//            req.setAttribute("fullName", fullName);
-//            req.setAttribute("dateOfBirth", dateOfBirth);
-//            req.setAttribute("isFemale", isFemale);
-//            resp.sendRedirect("/login");
             resp.sendRedirect("/login");
         } else {
             String notification = "THIS EMAIL IS ALREADY USED BY ANOTHER USER !";

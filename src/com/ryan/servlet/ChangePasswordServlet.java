@@ -2,7 +2,6 @@ package com.ryan.servlet;
 
 import com.ryan.model.User;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +21,6 @@ public class ChangePasswordServlet extends HttpServlet {
         } else {
             resp.sendRedirect("/login");
         }
-
     }
 
     @Override

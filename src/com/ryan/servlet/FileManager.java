@@ -5,11 +5,11 @@ import com.ryan.model.User;
 import java.io.*;
 import java.util.ArrayList;
 
-public class FileManager {
+class FileManager {
 
     private static final String FILE_NAME = "/home/ryan-ta/Documents/data.txt";
 
-    public void write(ArrayList<User> users) {
+    void write(ArrayList<User> users) {
 
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
@@ -28,7 +28,7 @@ public class FileManager {
         }
     }
 
-    public ArrayList<User> read() {
+    ArrayList<User> read() {
 
         ArrayList<User> users = new ArrayList<>();
         FileInputStream fis = null;
