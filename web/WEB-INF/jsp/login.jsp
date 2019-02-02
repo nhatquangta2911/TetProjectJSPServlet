@@ -23,11 +23,11 @@
         <form method="post" action="/login">
             <div class="w-50">
                 Email:<br>
-                <input type="email" name="email" class="form-control">
+                <input type="email" name="email" required class="form-control">
             </div><br>
             <div class="w-50">
                 Password:<br>
-                <input type="password" name="password" class="form-control">
+                <input type="password" name="password" required class="form-control">
             </div>
             <br>
             <p class="text-warning">${fail}</p>
