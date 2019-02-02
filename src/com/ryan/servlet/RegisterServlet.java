@@ -23,7 +23,7 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String emailAddress = req.getParameter("email");
-        String password = req.getParameter("password-2");
+        String password = req.getParameter("password2");
         String fullName = req.getParameter("full-name");
         String dateOfBirth = req.getParameter("date-of-birth");
         boolean isFemale = false;

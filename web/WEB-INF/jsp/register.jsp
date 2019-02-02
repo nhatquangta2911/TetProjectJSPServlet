@@ -24,29 +24,29 @@
     <form method="post" action="/register" name="registerForm">
         <div class="w-50">
             Email:<br>
-            <input type="email" name="email" class="form-control">
+            <input type="email" name="email" required class="form-control">
         </div><br>
         <div class="w-50">
             Password:<br>
-            <input type="password" name="password1" class="form-control">
+            <input type="password" name="password1" required class="form-control">
         </div><br>
         <div class="w-50">
             Retype Password:<br>
-            <input type="password" name="password2" class="form-control">
+            <input type="password" name="password2" required class="form-control">
         </div><br>
         <div class="w-50">
             Full Name:<br>
-            <input type="text" name="full-name" class="form-control">
+            <input type="text" name="full-name" required class="form-control">
         </div><br>
         <div class="w-50">
             Date Of Birth:<br>
-            <input type="date" name="date-of-birth" class="form-control">
+            <input type="date" name="date-of-birth" required class="form-control">
         </div><br>
         <div class="row">
             <div class="col-sm-2">Gender: </div>
             <div class="col-sm-2 form-check-inline">
                 <label class="form-check-label">
-                    <input type="radio" class="form-check-input" value="male" name="gender">Male
+                    <input type="radio" class="form-check-input" required value="male"  name="gender">Male
                 </label>
             </div>
             <div class="col-sm-4 form-check-inline">
@@ -56,7 +56,7 @@
             </div>
         </div><br>
         <div>
-            <input type="submit" onclick="matchPassword()" value="Sign Up" class="btn w-50 btn-outline-success">
+            <input type="submit" value="Sign Up" onclick="return matchPassword()" class="btn w-50 btn-outline-success">
         </div>
     </form>
 </div>
@@ -65,9 +65,12 @@
     function matchPassword() {
         var firstPassword = document.registerForm.password1.value;
         var secondPassword = document.registerForm.password2.value;
+        // var requiredRadioButton = document.registerForm.gender.required;
         if (firstPassword !== secondPassword) {
             alert('Password must be the same!');
+            return false;
         }
+        return true;
     }
 </script>
 </body>
