@@ -21,22 +21,22 @@
         <hr><br>
         <p class="text-danger">${userInfo}</p>
         <form method="post" action="/login">
-            <div class="w-50">
+            <div class="w-75">
                 Email:<br>
                 <input type="email" name="email" required class="form-control form-control-sm">
             </div><br>
-            <div class="w-50">
+            <div class="w-75">
                 Password:<br>
                 <input type="password" name="password" required class="form-control form-control-sm">
             </div>
             <br>
             <p class="text-warning">${fail}</p>
             <div>
-                <input type="submit" value="LOGIN" class="btn w-50 btn-outline-primary form-control-sm">
+                <input type="submit" value="LOGIN" class="btn w-75 btn-outline-primary">
             </div>
         </form>
         <form method="get" action="/register">
-            <input type="submit" value="Register" class="btn w-50 btn-outline-success">
+            <input type="submit" value="Register" class="btn w-75 btn-outline-success">
         </form>
     </div>
 </body>
