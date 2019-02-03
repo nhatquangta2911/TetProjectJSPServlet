@@ -23,16 +23,16 @@
         <form method="post" action="/login">
             <div class="w-50">
                 Email:<br>
-                <input type="email" name="email" required class="form-control">
+                <input type="email" name="email" required class="form-control form-control-sm">
             </div><br>
             <div class="w-50">
                 Password:<br>
-                <input type="password" name="password" required class="form-control">
+                <input type="password" name="password" required class="form-control form-control-sm">
             </div>
             <br>
             <p class="text-warning">${fail}</p>
             <div>
-                <input type="submit" value="LOGIN" class="btn w-50 btn-outline-primary">
+                <input type="submit" value="LOGIN" class="btn w-50 btn-outline-primary form-control-sm">
             </div>
         </form>
         <form method="get" action="/register">

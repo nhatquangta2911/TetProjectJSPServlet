@@ -9,12 +9,12 @@ public class UserManager {
     private ArrayList<User> users;
     private FileManager fileManager;
 
-    public UserManager() {
+    UserManager() {
         fileManager = new FileManager();
         users = fileManager.read();
     }
 
-    public User getUser(String needToGetEmailAddress) {
+    User getUser(String needToGetEmailAddress) {
         for (User user : users) {
             if (user.getEmailAddress().equals(needToGetEmailAddress)) {
                 return user;
@@ -23,7 +23,7 @@ public class UserManager {
         return null;
     }
 
-    public boolean isExist(User newUser) {
+    private boolean isExist(User newUser) {
         for (User user : users) {
             if (user.getEmailAddress().equals(newUser.getEmailAddress())) {
                 return true;
@@ -32,7 +32,7 @@ public class UserManager {
         return false;
     }
 
-    public boolean addUser(User user) {
+    boolean addUser(User user) {
         if (isExist(user)) {
             return false;
         } else {

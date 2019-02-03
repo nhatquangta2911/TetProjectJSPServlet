@@ -24,23 +24,23 @@
     <form method="post" action="/register" name="registerForm">
         <div class="w-50">
             Email:<br>
-            <input type="email" name="email" required class="form-control">
+            <input type="email" name="email" required class="form-control form-control-sm">
         </div><br>
         <div class="w-50">
             Password:<br>
-            <input type="password" name="password1" required class="form-control">
+            <input type="password" name="password1" required class="form-control form-control-sm">
         </div><br>
         <div class="w-50">
             Retype Password:<br>
-            <input type="password" name="password2" required class="form-control">
+            <input type="password" name="password2" required class="form-control form-control-sm">
         </div><br>
         <div class="w-50">
             Full Name:<br>
-            <input type="text" name="full-name" required class="form-control">
+            <input type="text" name="full-name" required class="form-control form-control-sm">
         </div><br>
         <div class="w-50">
             Date Of Birth:<br>
-            <input type="date" name="date-of-birth" required class="form-control">
+            <input type="date" name="date-of-birth" required class="form-control form-control-sm">
         </div><br>
         <div class="row">
             <div class="col-sm-2">Gender: </div>

@@ -25,15 +25,15 @@
     <form method="post" action="/edit-my-profile">
         <div class="w-50">
             Email:<br>
-            <input type="email" name="email" disabled value="<%= user.getEmailAddress()%>" class="form-control">
+            <input type="email" name="email" disabled value="<%= user.getEmailAddress()%>" class="form-control form-control-sm">
         </div><br>
         <div class="w-50">
             Full Name:<br>
-            <input type="text" name="full-name" value="<%= user.getFullName()%>" class="form-control">
+            <input type="text" name="full-name" value="<%= user.getFullName()%>" class="form-control form-control-sm">
         </div><br>
         <div class="w-50">
             Date Of Birth:<br>
-            <input type="date" name="date-of-birth" value="<%= user.getDateOfBirth()%>" class="form-control">
+            <input type="date" name="date-of-birth" value="<%= user.getDateOfBirth()%>" class="form-control form-control-sm">
         </div><br>
         <div class="row">
             <div class="col-sm-2">Gender: </div>

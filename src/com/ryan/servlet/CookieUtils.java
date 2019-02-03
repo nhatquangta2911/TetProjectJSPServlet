@@ -4,7 +4,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class CookieUtils {
+class CookieUtils {
 
     private CookieUtils() {
         // private for not creating an instance

@@ -21,16 +21,16 @@
     <form method="post" action="/change-password">
         <div class="w-50">
             Current Password:<br>
-            <input type="password" name="current-password" class="form-control">
+            <input type="password" name="current-password" class="form-control form-control-sm">
         </div><br>
         <div class="w-50">
             New Password:<br>
-            <input type="password" name="new-password" class="form-control">
+            <input type="password" name="new-password" class="form-control form-control-sm">
         </div>
         <br>
         <div class="w-50">
             Retype Password:<br>
-            <input type="password" name="new-password2" class="form-control">
+            <input type="password" name="new-password2" class="form-control form-control-sm">
         </div>
         <br>
         <div>
