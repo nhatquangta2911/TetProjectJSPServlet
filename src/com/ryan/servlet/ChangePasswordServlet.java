@@ -29,14 +29,23 @@ public class ChangePasswordServlet extends HttpServlet {
         HttpSession session = req.getSession();
         User user = (User) session.getAttribute("user");
 
-        String newPassword = req.getParameter("new-password2");
-        user.setPassword(newPassword);
+        String currentPassword = req.getParameter("current-password");
 
-        UserManager userManager = new UserManager();
-        userManager.removeUser(user.getEmailAddress());
-        userManager.addUser(user);
+        if (user.getPassword().equals(currentPassword)) {
 
-       resp.sendRedirect("/home");
+            String newPassword = req.getParameter("new-password2");
+            user.setPassword(newPassword);
 
+            UserManager userManager = new UserManager();
+            userManager.removeUser(user.getEmailAddress());
+            userManager.addUser(user);
+
+            resp.sendRedirect("/home");
+
+        } else {
+            String fail = "YOU HAVE ENTERED A WRONG PASSWORD!";
+            req.setAttribute("fail", fail);
+            req.getRequestDispatcher("/WEB-INF/jsp/change-password.jsp").forward(req, resp);
+        }
     }
 }
