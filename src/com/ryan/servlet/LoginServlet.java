@@ -22,11 +22,13 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         UserManager userManager = new UserManager();
+        MD5 md5 = new MD5();
 
         String emailAddress = req.getParameter("email");
         String password = req.getParameter("password");
+//        String decodedPassword = md5.MD5(password); !!! stupid =))
 
-        if (userManager.getUser(emailAddress) != null && userManager.getUser(emailAddress).getPassword().equals(password)) {
+        if (userManager.getUser(emailAddress) != null && md5.matching(userManager.getUser(emailAddress).getPassword(), password)) {
             CookieUtils.addCookie(resp, "emailAddress", emailAddress, 60 * 60);
             HttpSession session = req.getSession();
             session.setAttribute("user", userManager.getUser(emailAddress));
