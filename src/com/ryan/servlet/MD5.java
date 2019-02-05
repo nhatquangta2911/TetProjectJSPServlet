@@ -8,14 +8,13 @@ public class MD5 {
 
     public String MD5(String str){
 
-        MessageDigest md;
-        String result = "";
+        MessageDigest messageDigest;
+        String result = null;
 
         try {
-            md = MessageDigest.getInstance("MD5");
-            md.update(str.getBytes());
-            BigInteger bi = new BigInteger(1, md.digest());
-
+            messageDigest = MessageDigest.getInstance("MD5");
+            messageDigest.update(str.getBytes());
+            BigInteger bi = new BigInteger(1, messageDigest.digest());
             result = bi.toString(16);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
@@ -23,14 +22,18 @@ public class MD5 {
         return result;
     }
 
-    public boolean matching(String original, String compared) {
-        String md5 = null;
+    boolean matching(String original, String compared) {
+
+        String result;
+        MessageDigest messageDigest;
+
         try {
-            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+
+            messageDigest = MessageDigest.getInstance("MD5");
             messageDigest.update(compared.getBytes());
-            byte[] digest = messageDigest.digest();
-            md5 = new BigInteger(1, digest).toString(16);
-            return md5.equals(original);
+            result = new BigInteger(1, messageDigest.digest()).toString(16);
+            return result.equals(original);
+
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
