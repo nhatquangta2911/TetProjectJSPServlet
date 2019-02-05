@@ -1,4 +1,4 @@
-package com.ryan.test;
+package com.ryan.servlet;
 
 public class TestMD5 {
 

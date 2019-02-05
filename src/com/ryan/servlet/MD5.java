@@ -1,4 +1,4 @@
-package com.ryan.test;
+package com.ryan.servlet;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
