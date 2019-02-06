@@ -4,9 +4,9 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class MD5 {
+class MD5 {
 
-    public String MD5(String str){
+    static String encodingMD5(String str){
 
         MessageDigest messageDigest;
         String result = null;
@@ -22,22 +22,10 @@ public class MD5 {
         return result;
     }
 
-    boolean matching(String original, String compared) {
+    static boolean matching(String original, String compared) {
 
-        String result;
-        MessageDigest messageDigest;
+        return encodingMD5(compared).equals(original);
 
-        try {
-
-            messageDigest = MessageDigest.getInstance("MD5");
-            messageDigest.update(compared.getBytes());
-            result = new BigInteger(1, messageDigest.digest()).toString(16);
-            return result.equals(original);
-
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        return false;
     }
 
 }
