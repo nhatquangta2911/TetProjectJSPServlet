@@ -31,10 +31,11 @@ public class ChangePasswordServlet extends HttpServlet {
 
         String currentPassword = req.getParameter("current-password");
 
-        if (user.getPassword().equals(currentPassword)) {
+        if (MD5.matching(user.getPassword(), currentPassword)) {
 
-            String newPassword = req.getParameter("new-password2");
-            user.setPassword(newPassword);
+            String newPassword = req.getParameter("newPassword2"    );
+            String newEncodedPassword = MD5.encodingMD5(newPassword);
+            user.setPassword(newEncodedPassword);
 
             UserManager userManager = new UserManager();
             userManager.removeUser(user.getEmailAddress());

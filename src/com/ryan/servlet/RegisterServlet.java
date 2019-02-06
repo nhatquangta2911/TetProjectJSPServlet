@@ -22,11 +22,9 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        MD5 md5 = new MD5();
-
         String emailAddress = req.getParameter("email");
         String password = req.getParameter("password2");
-        String encodedPassword = md5.MD5(password);
+        String encodedPassword = MD5.encodingMD5(password);
         String fullName = req.getParameter("full-name");
         String dateOfBirth = req.getParameter("date-of-birth");
         boolean isFemale = false;
