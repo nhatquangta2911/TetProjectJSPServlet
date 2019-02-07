@@ -16,23 +16,23 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container d-fl h-100">
         <br><br>
-        <div class="row">
+        <div class="row justify-content-center align-self-center">
             <h1 class="col-sm-8 text-secondary">HOME PAGE</h1>
             <form class="col-sm-4" method="get" action="/logout">
                 <input type="submit" value="Log Out" class="w-100 btn mt-1 btn-outline-warning">
             </form>
         </div>
-        <div>
+        <div class="row justify-content-center align-self-center">
             <hr style="width: 100%; color: gray; height: 0.1px; background-color: gainsboro;" />
-            <br>
+            <br><br>
             <%
                 User user = (User) session.getAttribute("user");
             %>
             <p>Hello <span class="text-primary "><%= user.getFullName()%></span> !<span> Welcome to my website!</span></p>
         </div><br><br>
-        <div class="row">
+        <div class="row justify-content-center align-self-center">
             <form class="col-sm-4" method="get" action="/my-profile">
                 <input class="btn w-100 btn-outline-primary" type="submit" value="My Profile">
             </form>
